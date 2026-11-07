@@ -15,9 +15,9 @@ An nginx hello page on a 3-node Minikube cluster. Each Pod has an init container
 
 ## Answers for the failure test
 
-- **Status of the new Pod:** `Init:Error`, then `Init:CrashLoopBackOff`, READY `0/2`.
-- **Do nginx and time-updater start?** No. Init containers must exit with code 0 first.
-- **Is the page still reachable?** Yes. The Deployment keeps the 3 old Pods until the new Pod is Ready. The new Pod never becomes Ready.
+- The new Pod showed `Init:Error`, then `Init:CrashLoopBackOff`, with READY `0/2`.
+- nginx and time-updater did not start, because init containers must exit with code 0 first.
+- The page stayed reachable. The Deployment keeps the 3 old Pods until the new Pod is Ready, and it never became Ready.
 
 ## Files
 
