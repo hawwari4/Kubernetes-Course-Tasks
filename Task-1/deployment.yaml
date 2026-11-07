@@ -17,7 +17,7 @@ spec:
       initContainers:
       - name: init-done
         image: busybox:1.36
-        command: ["sh", "-c", "echo 'init failed'; exit 1"]
+        command: ["sh", "-c", "echo done"]
       containers:
       - name: nginx
         image: nginx:1.27
